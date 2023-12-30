@@ -1,0 +1,21 @@
+def calculate_loan_interest(principal, interest_rate, time_period):
+    # Преобразование процентов в дробную часть
+    interest_rate_decimal = interest_rate / 100.0
+
+    # Расчет суммы процентов
+    interest = principal * interest_rate_decimal * time_period
+
+    # Расчет общей суммы к возврату
+    total_amount = principal + interest
+
+    return interest, total_amount
+
+# Пример использования функции calculate_loan_interest
+loan_principal = 1000  # Заемная сумма
+loan_interest_rate = 5  # Процентная ставка
+loan_time_period = 6  # Срок займа в месяцах
+
+interest_amount, total_repayment = calculate_loan_interest(loan_principal, loan_interest_rate, loan_time_period)
+
+print(f"Сумма процентов по займу: {interest_amount}")
+print(f"Общая сумма к возврату: {total_repayment}")
